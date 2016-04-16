@@ -1,0 +1,359 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans
+        xmlns="http://www.springframework.org/schema/beans"
+        xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:util="http://www.springframework.org/schema/util"
+        xsi:schemaLocation="http://www.springframework.org/schema/beans
+                           http://www.springframework.org/schema/beans/spring-beans-2.0.xsd http://www.springframework.org/schema/util http://www.springframework.org/schema/util/spring-util-2.0.xsd">
+    <!-- load properties from file -->
+	<bean id="propertyConfigurer" class="org.springframework.beans.factory.config.PropertyPlaceholderConfigurer">
+		<property name="location">
+			<value>classpath:/config.properties</value>
+		</property>
+	</bean>
+
+	<!-- ///////////////// 数据库持久层配置 /////////////////// -->
+	<!--<bean id="dataSource" class="org.springframework.jndi.JndiObjectFactoryBean">-->
+		<!--<property name="jndiName" value="java:comp/env/${jndiName}"></property>-->
+	<!--</bean>-->
+    <bean id="dataSource"
+		class="com.mchange.v2.c3p0.ComboPooledDataSource"
+		destroy-method="close">
+		<property name="driverClass">
+			<value>${jdbc.driverClass}</value>
+		</property>
+		<property name="jdbcUrl">
+			<value>${jdbc.url}</value>
+		</property>
+		<property name="user">
+			<value>${jdbc.user}</value>
+		</property>
+		<property name="password">
+			<value>${jdbc.password}</value>
+		</property>
+		<!--连接池中保留的最小连接数。-->
+		<property name="minPoolSize" value="10" />
+		<!--连接池中保留的最大连接数。Default: 15 -->
+		<property name="maxPoolSize" value="30" />
+		<!--最大空闲时间,1800秒内未使用则连接被丢弃。若为0则永不丢弃。Default: 0 -->
+		<property name="maxIdleTime" value="1800" />
+		<!--当连接池中的连接耗尽的时候c3p0一次同时获取的连接数。Default: 3 -->
+		<property name="acquireIncrement" value="3" />
+		<property name="maxStatements" value="0" />
+		<property name="initialPoolSize" value="3" />
+		<!--每60秒检查所有连接池中的空闲连接。Default: 0 -->
+		<property name="idleConnectionTestPeriod" value="60" />
+		<!--定义在从数据库获取新连接失败后重复尝试的次数。Default: 30 -->
+		<property name="acquireRetryAttempts" value="30" />
+		<property name="acquireRetryDelay" value="100" />
+		<property name="breakAfterAcquireFailure" value="true" />
+		<property name="testConnectionOnCheckout" value="false" />
+	</bean>
+    <!--Hibernate SessionFatory-->
+
+    <bean id="sessionFactory" class="org.springframework.orm.hibernate3.LocalSessionFactoryBean">
+        <property name="dataSource">
+            <ref bean="dataSource" />
+        </property>
+        <property name="configLocations">
+            <list>
+                <value>classpath:hibernate.cfg.xml</value>
+            </list>
+        </property>
+        <property name="hibernateProperties">
+            <props>
+                <prop key="hibernate.dialect">org.hibernate.dialect.MySQLInnoDBDialect</prop>
+                <prop key="hibernate.show_sql">false</prop>
+                <prop key="hibernate.generate_statistics">true</prop>
+                <prop key="hibernate.connection.release_mode">auto</prop>
+                <prop key="hibernate.autoReconnect">true</prop>
+                <prop key="hibernate.hbm2ddl.auto">update</prop>
+                <prop key="cache.use_query_cache">true</prop>
+            </props>
+        </property>
+    </bean>
+
+    <!--Hibernate TransactionManager--><!-- 事务管理器 -->
+    <bean id="transactionManager" class="org.springframework.orm.hibernate3.HibernateTransactionManager">
+        <property name="sessionFactory">
+            <ref local="sessionFactory" />
+        </property>
+    </bean>
+    <!--   配置事务拦截器-->
+    <!--<bean id="transactionalTemplate" abstract="true" class="org.springframework.transaction.interceptor.TransactionInterceptor">-->
+		<!--<property name="transactionManager">-->
+			<!--<ref bean="transactionManager" />-->
+		<!--</property>-->
+		<!--<property name="transactionAttributes">-->
+			<!--<props>-->
+				<!--<prop key="new*">PROPAGATION_REQUIRED</prop>-->
+				<!--<prop key="add*">PROPAGATION_REQUIRED</prop>-->
+				<!--<prop key="bind*">PROPAGATION_REQUIRED</prop>-->
+				<!--<prop key="cancel*">PROPAGATION_REQUIRED</prop>-->
+				<!--<prop key="change*">PROPAGATION_REQUIRED</prop>-->
+				<!--<prop key="check*">PROPAGATION_REQUIRED</prop>-->
+				<!--<prop key="del*">PROPAGATION_REQUIRED</prop>-->
+				<!--<prop key="edit*">PROPAGATION_REQUIRED</prop>-->
+				<!--<prop key="find*">PROPAGATION_REQUIRED,readOnly</prop>-->
+				<!--<prop key="get*">PROPAGATION_REQUIRED,readOnly</prop>-->
+				<!--<prop key="is*">PROPAGATION_REQUIRED,readOnly</prop>-->
+				<!--<prop key="insert">PROPAGATION_REQUIRED</prop>-->
+				<!--<prop key="list*">PROPAGATION_REQUIRED,readOnly</prop>-->
+				<!--<prop key="merge*">PROPAGATION_REQUIRED,readOnly</prop>-->
+				<!--<prop key="next*">PROPAGATION_REQUIRED</prop>-->
+				<!--<prop key="upload*">PROPAGATION_REQUIRED</prop>-->
+				<!--<prop key="upd*">PROPAGATION_REQUIRED</prop>-->
+				<!--<prop key="unbind*">PROPAGATION_REQUIRED</prop>-->
+				<!--<prop key="save*">PROPAGATION_REQUIRED</prop>-->
+				<!--<prop key="build*">PROPAGATION_REQUIRED</prop>-->
+				<!--<prop key="search*">PROPAGATION_REQUIRED,readOnly</prop>-->
+			<!--</props>-->
+		<!--</property>-->
+	<!--</bean>-->
+
+    <!--<bean id="autoBeanNameProxyCreator" class="org.springframework.aop.framework.autoproxy.BeanNameAutoProxyCreator">-->
+        <!--<property name="beanNames">-->
+            <!--<list>-->
+                <!--<value>*DAO</value>-->
+                <!--<value>gotoPage</value>-->
+                <!--<value>find</value>-->
+            <!--</list>-->
+        <!--</property>-->
+        <!--<property name="interceptorNames">-->
+            <!--<list>-->
+                <!--<idref local="transactionalTemplate" />-->
+            <!--</list>-->
+        <!--</property>-->
+
+        <!--&lt;!&ndash; 这里的配置是必须的，否则无法完成代理的类型转化 这是使用CGLIB来生成代理 &ndash;&gt;-->
+        <!--<property name="proxyTargetClass" value="true"/>-->
+    <!--</bean>-->
+
+	<!--dao-->
+	<bean id="daoTemplate" abstract="true" class="cn.collin.commons.dao.MyDaoSupport">
+        <property name="sessionFactory" ref="sessionFactory" />
+    </bean>
+    <bean parent="daoTemplate" class="com.hzih.mmcs.dao.impl.AccountDaoImpl" id="accountDao"/>
+    <bean parent="daoTemplate" class="com.hzih.mmcs.dao.impl.BusinessLogDaoImpl" id="businessLogDao"/>
+    <bean parent="daoTemplate" class="com.hzih.mmcs.dao.impl.DepartmentDaoImpl" id="departmentDao"/>
+    <bean parent="daoTemplate" class="com.hzih.mmcs.dao.impl.DistrictDaoImpl" id="districtDao"/>
+    <bean parent="daoTemplate" class="com.hzih.mmcs.dao.impl.EquipmentLogDaoImpl" id="equipmentLogDao"/>
+    <bean parent="daoTemplate" class="com.hzih.mmcs.dao.impl.InitSystemDaoImpl" id="initSystemDao"/>
+    <bean parent="daoTemplate" class="com.hzih.mmcs.dao.impl.LogRecordDaoImpl" id="logRecordDao"/>
+    <bean parent="daoTemplate" class="com.hzih.mmcs.dao.impl.OrgcodeDaoImpl" id="orgcodeDao"/>
+    <bean parent="daoTemplate" class="com.hzih.mmcs.dao.impl.PermissionDaoImpl" id="permissionDao"/>
+    <bean parent="daoTemplate" class="com.hzih.mmcs.dao.impl.RoleDaoImpl" id="roleDao"/>
+    <bean parent="daoTemplate" class="com.hzih.mmcs.dao.impl.SafePolicyDaoImpl" id="safePolicyDao"/>
+    <bean parent="daoTemplate" class="com.hzih.mmcs.dao.impl.SysLogDaoImpl" id="sysLogDao"/>
+    <bean parent="daoTemplate" class="com.hzih.mmcs.dao.impl.UserOperLogDaoImpl" id="userOperLogDao"/>
+
+        <!-- cx-->
+    <bean parent="daoTemplate" class="com.hzih.mmcs.dao.impl.NewsDaoImpl" id="newsDao"/>
+    <bean parent="daoTemplate" class="com.hzih.mmcs.dao.impl.SysmessageDaoImpl" id="sysmessageDao"/>
+    <bean parent="daoTemplate" class="com.hzih.mmcs.dao.impl.SysabnormalDaoImpl" id="sysabnormalDao"/>
+    <bean parent="daoTemplate" class="com.hzih.mmcs.dao.impl.ZoneCodeDaoImpl" id="zoneCodeDao"/>
+
+    <bean parent="daoTemplate" class="com.hzih.mmcs.dao.impl.SysRegInfDaoImpl" id="sysRegInfDao"/>
+
+        <!-- GDW -->
+    <bean parent="daoTemplate" class="com.hzih.mmcs.dao.impl.StatSysStatusDaoImpl" id="statSysStatusDao"/>
+    <bean parent="daoTemplate" class="com.hzih.mmcs.dao.impl.SysBizInfDaoImpl" id="sysBizInfDao"/>
+    <bean parent="daoTemplate" class="com.hzih.mmcs.dao.impl.SysDeviceInfDaoImpl" id="sysDeviceInfDao"/>
+    <bean parent="daoTemplate" class="com.hzih.mmcs.dao.impl.SysOutLinkInfDaoImpl" id="sysOutLinkInfDao"/>
+    <bean parent="daoTemplate" class="com.hzih.mmcs.dao.impl.OutLinkTypeCodeDaoImpl" id="outLinkTypeCodeDao"/>
+    <bean parent="daoTemplate" class="com.hzih.mmcs.dao.impl.BizModeCodeDaoImpl" id="bizModeCodeDao"/>
+    <bean parent="daoTemplate" class="com.hzih.mmcs.dao.impl.BizFuncTypeCodeDaoImpl" id="bizFuncTypeCodeDao"/>
+    <bean parent="daoTemplate" class="com.hzih.mmcs.dao.impl.BizTypeCodeDaoImpl" id="bizTypeCodeDao"/>
+    <bean parent="daoTemplate" class="com.hzih.mmcs.dao.impl.DeviceTypeCodeDaoImpl" id="deviceTypeCodeDao"/>
+    <bean parent="daoTemplate" class="com.hzih.mmcs.dao.impl.BuildingUnitCodeDaoImpl" id="buildingUnitCodeDao"/>
+    <bean parent="daoTemplate" class="com.hzih.mmcs.dao.impl.TerminalTypeCodeDaoImpl" id="terminalTypeCodeDao"/>
+
+        <!--hhm-->
+    <bean parent="daoTemplate" class="com.hzih.mmcs.dao.impl.SysAssessmentDaoImpl" id="sysAssessmentDao"/>
+
+        <!-- lmy -->
+    <bean parent="daoTemplate" class="com.hzih.mmcs.dao.impl.StatSysterminalinfoDaoImpl" id="statSysterminalinfoDao" />
+    <bean parent="daoTemplate" class="com.hzih.mmcs.dao.impl.SysterminalInfoDaoImpl" id="systerminalInfoDao" />
+
+
+    <!-- services -->
+    <bean class="com.hzih.mmcs.service.impl.AccountServiceImpl" id="accountService">
+        <property name="accountDao" ref="accountDao"/>
+        <property name="departmentDao" ref="departmentDao"/>
+        <property name="orgcodeDao" ref="orgcodeDao"/>
+        <property name="districtDao" ref="districtDao"/>
+        <property name="roleDao" ref="roleDao"/>
+        <property name="initSystemDao" ref="initSystemDao"/>
+        <property name="sysmessageDao" ref="sysmessageDao"/>
+    </bean>
+    <bean class="com.hzih.mmcs.service.impl.AuditServiceImpl" id="auditService">
+        <property name="businessLogDao" ref="businessLogDao"/>
+        <property name="equipmentLogDao" ref="equipmentLogDao"/>
+        <property name="sysLogDao" ref="sysLogDao"/>
+        <property name="userOperLogDao" ref="userOperLogDao"/>
+    </bean>
+    <bean class="com.hzih.mmcs.service.impl.DistrictServiceImpl" id="districtService">
+        <property name="districtDao" ref="districtDao"/>
+    </bean>
+    <bean class="com.hzih.mmcs.service.impl.LogRecordServiceImpl" id="logRecordService">
+        <property name="logRecordDao" ref="logRecordDao"/>
+    </bean>
+    <bean class="com.hzih.mmcs.service.impl.LogServiceImpl" id="logService">
+        <property name="businessLogDao" ref="businessLogDao"/>
+        <property name="equipmentLogDao" ref="equipmentLogDao"/>
+        <property name="sysLogDao" ref="sysLogDao"/>
+        <property name="userOperLogDao" ref="userOperLogDao"/>
+    </bean>
+    <bean class="com.hzih.mmcs.service.impl.RoleServiceImpl" id="roleService">
+        <property name="permissionDao" ref="permissionDao"/>
+        <property name="roleDao" ref="roleDao"/>
+    </bean>
+    <bean class="com.hzih.mmcs.service.impl.InitSystemServiceImpl" id="initSystemService">
+        <property name="initSystemDao" ref="initSystemDao"/>
+        <property name="districtDao" ref="districtDao"/>
+    </bean>
+    <bean class="com.hzih.mmcs.service.impl.SafePolicyServiceImpl" id="safePolicyService">
+        <property name="safePolicyDao" ref="safePolicyDao"/>
+    </bean>
+
+        <!-- cx -->
+    <bean class="com.hzih.mmcs.service.impl.NewsServiceImpl" id="newsService">
+        <property name="newsDao" ref="newsDao"/>
+    </bean>
+    <bean class="com.hzih.mmcs.service.impl.SysmessageServiceImpl" id="sysmessageService">
+        <property name="sysmessageDao" ref="sysmessageDao"/>
+        <property name="accountDao" ref="accountDao"/>
+        <property name="orgcodeDao" ref="orgcodeDao"/>
+    </bean>
+    <bean class="com.hzih.mmcs.service.impl.SysabnormalServiceImpl" id="sysabnormalService">
+        <property name="sysabnormalDao" ref="sysabnormalDao"/>
+        <property name="zonecodeDao" ref="zoneCodeDao"/>
+        <property name="sysRegInfDao" ref="sysRegInfDao"/>
+        <property name="districtDao" ref="districtDao"/>
+    </bean>
+
+        <!-- GDW -->
+    <bean class="com.hzih.mmcs.service.impl.StatSysStatusServiceImpl" id="statSysStatusService">
+        <property name="statSysStatusDao" ref="statSysStatusDao"/>
+        <property name="districtDao" ref="districtDao"/>
+        <property name="sysRegInfDao" ref="sysRegInfDao"/>
+    </bean>
+    <bean class="com.hzih.mmcs.service.impl.SysDeviceInfServiceImpl" id="sysDeviceInfService">
+        <property name="sysDeviceInfDao" ref="sysDeviceInfDao"/>
+    </bean>
+    <bean class="com.hzih.mmcs.service.impl.SysOutLinkInfServiceImpl" id="sysOutLinkInfService">
+        <property name="sysOutLinkInfDao" ref="sysOutLinkInfDao"/>
+        <property name="outLinkTypeCodeDao" ref="outLinkTypeCodeDao"/>
+    </bean>
+    <bean class="com.hzih.mmcs.service.impl.SysRegInfServiceImpl" id="sysRegInfService">
+        <property name="sysRegInfDao" ref="sysRegInfDao"/>
+        <property name="departmentDao" ref="departmentDao"/>
+        <property name="districtDao" ref="districtDao"/>
+        <property name="buildingUnitCodeDao" ref="buildingUnitCodeDao"/>
+    </bean>
+    <bean class="com.hzih.mmcs.service.impl.SysBizInfServiceImpl" id="sysBizInfService">
+        <property name="sysBizInfDao" ref="sysBizInfDao"/>
+        <property name="bizModeCodeDao" ref="bizModeCodeDao"/>
+        <property name="bizFuncTypeCodeDao" ref="bizFuncTypeCodeDao"/>
+        <property name="bizTypeCodeDao" ref="bizTypeCodeDao"/>
+        <property name="departmentDao" ref="departmentDao"/>
+        <property name="deviceTypeCodeDao" ref="deviceTypeCodeDao"/>
+        <property name="terminalTypeCodeDao" ref="terminalTypeCodeDao"/>
+        <property name="districtDao" ref="districtDao"/>
+    </bean>
+
+        <!-- hhm -->
+    <bean class="com.hzih.mmcs.service.impl.SysAssessmentServiceImpl" id="sysAssessmentService">
+        <property name="zoneCodeDao" ref="zoneCodeDao"/>
+        <property name="sysRegInfDao" ref="sysRegInfDao"/>
+        <property name="sysAssessmentDao" ref="sysAssessmentDao"/>
+    </bean>
+
+        <!-- lmy -->
+    <bean class="com.hzih.mmcs.service.impl.TerminalMonitorServiceImpl" id="terminalMonitorService" >
+        <property name="districtDao" ref="districtDao"></property>
+        <property name="systerminalInfoDao" ref="systerminalInfoDao"></property>
+        <property name="orgcodeDao" ref="orgcodeDao"></property>
+        <property name="sysRegInfDao" ref="sysRegInfDao"></property>
+        <property name="statSysterminalinfoDao" ref="statSysterminalinfoDao"></property>
+    </bean>
+
+
+    <!-- action  -->
+    <bean class="com.hzih.mmcs.web.action.user.AccountAction" id="AccountAction">
+        <property name="logService" ref="logService" />
+        <property name="accountService" ref="accountService"/>
+    </bean>
+    <bean class="com.hzih.mmcs.web.action.audit.AuditAction" id="AuditAction">
+        <property name="auditService" ref="auditService"/>
+        <property name="logService" ref="logService"/>
+    </bean>
+    <bean class="com.hzih.mmcs.web.action.common.DistrictAction" id="DistrictAction">
+        <property name="districtService" ref="districtService"/>
+        <property name="logService" ref="logService"/>
+    </bean>
+    <bean class="com.hzih.mmcs.web.action.system.InitSystemAction" id="InitSystemAction">
+        <property name="districtService" ref="districtService"/>
+        <property name="initSystemService" ref="initSystemService"/>
+        <property name="logService" ref="logService"/>
+    </bean>
+    <bean class="com.hzih.mmcs.web.action.user.LoginAction" id="LoginAction">
+        <property name="accountService" ref="accountService"/>
+        <property name="initSystemService" ref="initSystemService"/>
+        <property name="logRecordService" ref="logRecordService"/>
+        <property name="logService" ref="logService"/>
+    </bean>
+    <bean class="com.hzih.mmcs.web.action.user.RegisterAction" id="RegisterAction">
+        <property name="accountService" ref="accountService"/>
+        <property name="initSystemService" ref="initSystemService"/>
+        <property name="logRecordService" ref="logRecordService"/>
+        <property name="logService" ref="logService"/>
+    </bean>
+    <bean class="com.hzih.mmcs.web.action.user.RoleAction" id="RoleAction">
+        <property name="logService" ref="logService"/>
+        <property name="roleService" ref="roleService"/>
+    </bean>
+
+        <!-- cx -->
+    <bean class="com.hzih.mmcs.web.action.News.NewsAction" id="NewsAction">
+        <property name="newsService" ref="newsService"/>
+        <property name="logService" ref="logService" />
+    </bean>
+    <bean class="com.hzih.mmcs.web.action.sysmessage.SysmessageAction" id="SysmessageAction">
+        <property name="sysmessageService" ref="sysmessageService"/>
+        <property name="accountService" ref="accountService"/>
+        <property name="logService" ref="logService" />
+    </bean>
+    <bean class="com.hzih.mmcs.web.action.sysabnormal.SysabnormalAction" id="SysabnormalAction">
+        <property name="sysabnormalService" ref="sysabnormalService"/>
+        <property name="logService" ref="logService" />
+    </bean>
+
+        <!-- GDW -->
+    <bean class="com.hzih.mmcs.web.action.monitor.ColumtreeAction" id="ColumtreeAction">
+        <property name="statSysStatusService" ref="statSysStatusService"/>
+        <property name="logService" ref="logService" />
+    </bean>
+    <bean class="com.hzih.mmcs.web.action.monitor.SelectAction" id="SelectAction">
+        <property name="sysBizInfService" ref="sysBizInfService"/>
+        <property name="sysDeviceInfService" ref="sysDeviceInfService"/>
+        <property name="sysOutLinkInfService" ref="sysOutLinkInfService"/>
+        <property name="sysRegInfService" ref="sysRegInfService"/>
+        <property name="logService" ref="logService" />
+    </bean>
+        <!-- hhm-->
+    <bean class="com.hzih.mmcs.web.action.score.SysAssessmentAction" id="SysAssessmentAction">
+        <property name="sysAssessmentService" ref="sysAssessmentService"/>
+        <property name="initSystemService" ref="initSystemService"/>
+        <property name="logService" ref="logService" />
+    </bean>
+
+        <!-- lmy -->
+    <bean class="com.hzih.mmcs.web.action.monitor.TerminalMonitorAction"  id="TerminalMonitorAction" >
+        <property name="terminalMonitorService" ref="terminalMonitorService" />
+        <property name="logService" ref="logService" />
+    </bean>
+    <bean class="com.hzih.mmcs.web.action.analysis.AnalysisAction"  id="AnalysisAction" >
+        <property name="logService" ref="logService" />
+        <property name="sysRegInfService" ref="sysRegInfService"/>
+    </bean>
+</beans>

@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN" "http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
+
+<hibernate-mapping>
+  <class table="sysbizinf" name="com.hzih.mmcs.domain.SysBizInf">
+    <id access="field" name="id" type="java.lang.Integer" column="id">
+      <generator class="identity"/>
+    </id>
+    <property name="idbiz" column="idbiz" access="field" type="java.lang.Integer"/>
+    <property name="idsystem" column="idsystem" access="field" type="java.lang.String"/>
+    <property name="bizMode" column="bizMode" access="field" type="java.lang.String"/>
+    <property name="bizType" column="bizType" access="field" type="java.lang.String"/>
+    <property name="bizfunctype" column="bizfunctype" access="field" type="java.lang.String"/>
+    <property name="bizTerminal" column="bizTerminal" access="field" type="java.lang.String"/>
+    <property name="bizManagedepart" column="bizManagedepart" access="field" type="java.lang.String"/>
+    <property name="managedepartManager" column="managedepartManager" access="field" type="java.lang.String"/>
+    <property name="managedepartPhone" column="managedepartPhone" access="field" type="java.lang.String"/>
+    <property name="managedepartMail" column="managedepartMail" access="field" type="java.lang.String"/>
+    <property name="managedepartLink" column="managedepartLink" access="field" type="java.lang.String"/>
+    <property name="approveUnit" column="approveUnit" access="field" type="java.lang.String"/>
+    <property name="approveNo" column="approveNo" access="field" type="java.lang.String"/>
+    <property name="approveMaterial" column="approveMaterial" access="field" type="java.lang.String"/>
+    <property name="realtime" column="realtime" access="field" type="java.lang.String"/>
+    <property name="dateexchangeDateflux" column="dateexchangeDateflux" access="field" type="java.lang.String"/>
+    <property name="isBackup" column="isBackup" access="field" type="java.lang.String"/>
+    <property name="backupUnitname" column="backupUnitname" access="field" type="java.lang.String"/>
+    <property name="topologyMap" column="topologyMap" access="field" type="java.lang.String"/>
+    <property name="registerTime" column="registerTime" access="field" type="java.sql.Timestamp"/>
+    <property name="approveTime" column="approveTime" access="field" type="java.sql.Timestamp"/>
+    <property name="collecttime" column="collecttime" access="field" type="java.sql.Timestamp"/>
+  </class>
+</hibernate-mapping>

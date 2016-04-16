@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN" "http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
+
+<hibernate-mapping>
+    <class table="sysassessment" name="com.hzih.mmcs.domain.SysAssessment">
+        <id access="field" name="id" type="int" column="id" length="11">
+            <generator class="increment"/>
+        </id>
+
+        <property name="idsystem" length="10" column="idsystem" access="field" type="string"/>
+        <property name="regscore" length="15" column="regscore" access="field" type="double"/>
+        <property name="abnscore" length="15" column="abnscore" access="field" type="double"/>
+        <property name="logscore" length="15" column="logscore" access="field" type="double"/>
+        <property name="resscore" length="15" column="resscore" access="field" type="double"/>
+        <property name="actscore" length="15"  column="actscore" access="field" type="double"/>
+        <property name="sumscore" length="15"  column="sumscore" access="field" type="double"/>
+        <property name="updatetime"  column="updatetime" access="field" type="java.sql.Timestamp"/>
+
+    </class>
+</hibernate-mapping>

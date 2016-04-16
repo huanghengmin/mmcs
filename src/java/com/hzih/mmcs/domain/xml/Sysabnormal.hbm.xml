@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN" "http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
+
+<hibernate-mapping>
+    <class table="sysabnormal" name="com.hzih.mmcs.domain.Sysabnormal">
+        <id access="field" name="id" type="java.lang.Long" column="id">
+            <generator class="identity"/>
+        </id>
+        <property name="idsystem" column="idsystem" access="field" type="java.lang.String"/>
+        <property name="idalertmatter" column="idalertmatter" access="field" type="java.lang.Long"/>
+        <property name="abnormaltypecode" column="abnormaltypecode" access="field" type="java.lang.String"/>
+        <property name="connectobjectcode" column="connectobjectcode" access="field" type="java.lang.String"/>
+        <property name="exceptiondesc" column="exceptiondesc" access="field" type="java.lang.String"/>
+        <property name="happentime" column="happentime" access="field" type="java.util.Date"/>
+        <property name="treattime" column="treattime" access="field" type="java.util.Date"/>
+        <property name="treadresult" column="treadresult" access="field" type="java.lang.String"/>
+        <property name="ifcheckin" column="ifcheckin" access="field" type="java.lang.String"/>
+        <property name="abProcessId" column="ab_process_id" access="field" type="java.lang.String"/>
+
+    </class>
+</hibernate-mapping>

@@ -1,0 +1,391 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="AntConfiguration">
+    <defaultAnt bundledAnt="true" />
+  </component>
+  <component name="ArtifactManager">
+    <artifact type="exploded-war" name="mmcs:appserver exploded">
+      <output-path>E:/fartec/ichange/mmcs/tomcat/webapps/mmcs</output-path>
+      <root id="root">
+        <element id="javaee-facet-resources" facet="mmcs/web/appserver" />
+        <element id="directory" name="WEB-INF">
+          <element id="directory" name="classes">
+            <element id="javaee-facet-classes" facet="mmcs/web/appserver" />
+            <element id="module-output" name="mmcs" />
+          </element>
+          <element id="directory" name="lib">
+            <element id="library" level="project" name="struts" />
+            <element id="library" level="project" name="hibernate" />
+            <element id="library" level="project" name="spring" />
+            <element id="library" level="project" name="mmcs" />
+          </element>
+          <element id="file-copy" path="$PROJECT_DIR$/src/resources/spring.xml" />
+          <element id="file-copy" path="$PROJECT_DIR$/src/resources/log4j.properties" />
+        </element>
+      </root>
+    </artifact>
+  </component>
+  <component name="CompilerConfiguration">
+    <option name="DEFAULT_COMPILER" value="Javac" />
+    <resourceExtensions />
+    <wildcardResourcePatterns>
+      <entry name="?*.properties" />
+      <entry name="?*.xml" />
+      <entry name="?*.gif" />
+      <entry name="?*.png" />
+      <entry name="?*.jpeg" />
+      <entry name="?*.jpg" />
+      <entry name="?*.html" />
+      <entry name="?*.dtd" />
+      <entry name="?*.tld" />
+      <entry name="?*.ftl" />
+    </wildcardResourcePatterns>
+    <annotationProcessing enabled="false" useClasspath="true" />
+  </component>
+  <component name="CopyrightManager" default="">
+    <module2copyright />
+  </component>
+  <component name="DependencyValidationManager">
+    <option name="SKIP_IMPORT_STATEMENTS" value="false" />
+  </component>
+  <component name="Encoding" useUTFGuessing="true" native2AsciiForPropertiesFiles="false">
+    <file url="file://$PROJECT_DIR$/src/appserver/ext/ext-all.js" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/src/appserver/img/icon/change.gif" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/src/appserver/img/icon/copy.gif" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/src/appserver/img/icon/save.gif" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/src/appserver/js/abnormal/abnormal.js" charset="GBK" />
+    <file url="file://$PROJECT_DIR$/src/appserver/js/abnormal/column_tree.js" charset="GBK" />
+    <file url="file://$PROJECT_DIR$/src/appserver/js/assessment/column_tree.js" charset="GBK" />
+    <file url="file://$PROJECT_DIR$/src/appserver/js/audit/audit_user.js" charset="GBK" />
+    <file url="file://$PROJECT_DIR$/src/appserver/js/email/email.js" charset="GBK" />
+    <file url="file://$PROJECT_DIR$/src/appserver/js/email/managerEmail.js" charset="GBK" />
+    <file url="file://$PROJECT_DIR$/src/appserver/js/index.js" charset="GBK" />
+    <file url="file://$PROJECT_DIR$/src/appserver/js/monitor/runMonitor.js" charset="GBK" />
+    <file url="file://$PROJECT_DIR$/src/appserver/js/notice/managerNotice.js" charset="GBK" />
+    <file url="file://$PROJECT_DIR$/src/appserver/js/notice/notice.js" charset="GBK" />
+    <file url="file://$PROJECT_DIR$/src/appserver/js/system/register.js" charset="GBK" />
+    <file url="file://$PROJECT_DIR$/src/appserver/js/system/registerManager.js" charset="GBK" />
+    <file url="file://$PROJECT_DIR$/src/appserver/js/terminalMonitor/tree2.js" charset="GBK" />
+    <file url="file://$PROJECT_DIR$/src/appserver/pages/abnormal/abnormal.jsp" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/src/appserver/pages/analysis/analysis.jsp" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/src/appserver/pages/assessment/assessment.jsp" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/src/appserver/pages/audit/audit_business.jsp" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/src/appserver/pages/audit/audit_equipment.jsp" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/src/appserver/pages/audit/audit_os.jsp" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/src/appserver/pages/audit/audit_user.jsp" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/src/appserver/pages/email/email.jsp" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/src/appserver/pages/email/managerEmail.jsp" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/src/appserver/pages/error/sh_error.jsp" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/src/appserver/pages/monitor/runMonitor.jsp" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/src/appserver/pages/monitor/terminalMonitor.jsp" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/src/appserver/pages/notice/managerNotice.jsp" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/src/appserver/pages/notice/notice.jsp" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/src/appserver/pages/system/system.jsp" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/src/java/com/hzih/mmcs/dao/AccountDao.java" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/src/java/com/hzih/mmcs/dao/BusinessLogDao.java" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/src/java/com/hzih/mmcs/dao/DistrictDao.java" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/src/java/com/hzih/mmcs/dao/EquipmentLogDao.java" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/src/java/com/hzih/mmcs/dao/InitSystemDao.java" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/src/java/com/hzih/mmcs/dao/PermissionDao.java" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/src/java/com/hzih/mmcs/dao/RoleDao.java" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/src/java/com/hzih/mmcs/dao/SafePolicyDao.java" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/src/java/com/hzih/mmcs/dao/SysLogDao.java" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/src/java/com/hzih/mmcs/dao/UserOperLogDao.java" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/src/java/com/hzih/mmcs/dao/impl/AccountDaoImpl.java" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/src/java/com/hzih/mmcs/dao/impl/BusinessLogDaoImpl.java" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/src/java/com/hzih/mmcs/dao/impl/DistrictDaoImpl.java" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/src/java/com/hzih/mmcs/dao/impl/EquipmentLogDaoImpl.java" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/src/java/com/hzih/mmcs/dao/impl/PermissionDaoImpl.java" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/src/java/com/hzih/mmcs/dao/impl/RoleDaoImpl.java" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/src/java/com/hzih/mmcs/dao/impl/SafePolicyDaoImpl.java" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/src/java/com/hzih/mmcs/dao/impl/SysLogDaoImpl.java" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/src/java/com/hzih/mmcs/dao/impl/UserOperLogDaoImpl.java" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/src/java/com/hzih/mmcs/domain/Account.java" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/src/java/com/hzih/mmcs/domain/BusinessLog.java" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/src/java/com/hzih/mmcs/domain/District.java" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/src/java/com/hzih/mmcs/domain/EquipmentLog.java" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/src/java/com/hzih/mmcs/domain/InitSystem.java" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/src/java/com/hzih/mmcs/domain/Permission.java" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/src/java/com/hzih/mmcs/domain/Role.java" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/src/java/com/hzih/mmcs/domain/SafePolicy.java" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/src/java/com/hzih/mmcs/domain/SysLog.java" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/src/java/com/hzih/mmcs/domain/UserOperLog.java" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/src/java/com/hzih/mmcs/domain/xml/Account.hbm.xml" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/src/java/com/hzih/mmcs/domain/xml/BusinessLog.hbm.xml" charset="GBK" />
+    <file url="file://$PROJECT_DIR$/src/java/com/hzih/mmcs/domain/xml/Department.hbm.xml" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/src/java/com/hzih/mmcs/domain/xml/District.hbm.xml" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/src/java/com/hzih/mmcs/domain/xml/EquipmentLog.hbm.xml" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/src/java/com/hzih/mmcs/domain/xml/InitSystem.hbm.xml" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/src/java/com/hzih/mmcs/domain/xml/LogRecord.hbm.xml" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/src/java/com/hzih/mmcs/domain/xml/Permission.hbm.xml" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/src/java/com/hzih/mmcs/domain/xml/Role.hbm.xml" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/src/java/com/hzih/mmcs/domain/xml/SafePolicy.hbm.xml" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/src/java/com/hzih/mmcs/domain/xml/SysLog.hbm.xml" charset="GBK" />
+    <file url="file://$PROJECT_DIR$/src/java/com/hzih/mmcs/domain/xml/UserOperLog.hbm.xml" charset="GBK" />
+    <file url="file://$PROJECT_DIR$/src/java/com/hzih/mmcs/service/LogService.java" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/src/java/com/hzih/mmcs/service/SafePolicyService.java" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/src/java/com/hzih/mmcs/service/impl/LogServiceImpl.java" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/src/java/com/hzih/mmcs/service/impl/SafePolicyServiceImpl.java" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/src/java/com/hzih/mmcs/utils/CheckTimeResult.java" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/src/java/com/hzih/mmcs/utils/LicenseUtils.java" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/src/java/com/hzih/mmcs/utils/ServiceResponse.java" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/src/java/com/hzih/mmcs/utils/ServiceUtil.java" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/src/java/com/hzih/mmcs/utils/constant/ConstantUtils.java" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/src/java/com/hzih/mmcs/web/SessionUtils.java" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/src/java/com/hzih/mmcs/web/SiteContext.java" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/src/java/com/hzih/mmcs/web/action/ActionBase.java" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/src/java/com/hzih/mmcs/web/filter/CheckLoginFilter.java" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/src/java/com/hzih/mmcs/web/servlet/SiteContextLoaderServlet.java" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/src/java/com/hzih/mmcs/web/servlet/TimerCountReportServlet.java" charset="UTF-8" />
+  </component>
+  <component name="EntryPointsManager">
+    <entry_points version="2.0" />
+  </component>
+  <component name="IdProvider" IDEtalkID="BA6C0EF172CC2A735CD673AA4713F6C9" />
+  <component name="JavadocGenerationManager">
+    <option name="OUTPUT_DIRECTORY" />
+    <option name="OPTION_SCOPE" value="protected" />
+    <option name="OPTION_HIERARCHY" value="true" />
+    <option name="OPTION_NAVIGATOR" value="true" />
+    <option name="OPTION_INDEX" value="true" />
+    <option name="OPTION_SEPARATE_INDEX" value="true" />
+    <option name="OPTION_DOCUMENT_TAG_USE" value="false" />
+    <option name="OPTION_DOCUMENT_TAG_AUTHOR" value="false" />
+    <option name="OPTION_DOCUMENT_TAG_VERSION" value="false" />
+    <option name="OPTION_DOCUMENT_TAG_DEPRECATED" value="true" />
+    <option name="OPTION_DEPRECATED_LIST" value="true" />
+    <option name="OTHER_OPTIONS" value="" />
+    <option name="HEAP_SIZE" />
+    <option name="LOCALE" />
+    <option name="OPEN_IN_BROWSER" value="true" />
+  </component>
+  <component name="ModuleEditorState">
+    <option name="LAST_EDITED_MODULE_NAME" />
+    <option name="LAST_EDITED_TAB_NAME" />
+  </component>
+  <component name="Palette2">
+    <group name="Swing">
+      <item class="com.intellij.uiDesigner.HSpacer" tooltip-text="Horizontal Spacer" icon="/com/intellij/uiDesigner/icons/hspacer.png" removable="false" auto-create-binding="false" can-attach-label="false">
+        <default-constraints vsize-policy="1" hsize-policy="6" anchor="0" fill="1" />
+      </item>
+      <item class="com.intellij.uiDesigner.VSpacer" tooltip-text="Vertical Spacer" icon="/com/intellij/uiDesigner/icons/vspacer.png" removable="false" auto-create-binding="false" can-attach-label="false">
+        <default-constraints vsize-policy="6" hsize-policy="1" anchor="0" fill="2" />
+      </item>
+      <item class="javax.swing.JPanel" icon="/com/intellij/uiDesigner/icons/panel.png" removable="false" auto-create-binding="false" can-attach-label="false">
+        <default-constraints vsize-policy="3" hsize-policy="3" anchor="0" fill="3" />
+      </item>
+      <item class="javax.swing.JScrollPane" icon="/com/intellij/uiDesigner/icons/scrollPane.png" removable="false" auto-create-binding="false" can-attach-label="true">
+        <default-constraints vsize-policy="7" hsize-policy="7" anchor="0" fill="3" />
+      </item>
+      <item class="javax.swing.JButton" icon="/com/intellij/uiDesigner/icons/button.png" removable="false" auto-create-binding="true" can-attach-label="false">
+        <default-constraints vsize-policy="0" hsize-policy="3" anchor="0" fill="1" />
+        <initial-values>
+          <property name="text" value="Button" />
+        </initial-values>
+      </item>
+      <item class="javax.swing.JRadioButton" icon="/com/intellij/uiDesigner/icons/radioButton.png" removable="false" auto-create-binding="true" can-attach-label="false">
+        <default-constraints vsize-policy="0" hsize-policy="3" anchor="8" fill="0" />
+        <initial-values>
+          <property name="text" value="RadioButton" />
+        </initial-values>
+      </item>
+      <item class="javax.swing.JCheckBox" icon="/com/intellij/uiDesigner/icons/checkBox.png" removable="false" auto-create-binding="true" can-attach-label="false">
+        <default-constraints vsize-policy="0" hsize-policy="3" anchor="8" fill="0" />
+        <initial-values>
+          <property name="text" value="CheckBox" />
+        </initial-values>
+      </item>
+      <item class="javax.swing.JLabel" icon="/com/intellij/uiDesigner/icons/label.png" removable="false" auto-create-binding="false" can-attach-label="false">
+        <default-constraints vsize-policy="0" hsize-policy="0" anchor="8" fill="0" />
+        <initial-values>
+          <property name="text" value="Label" />
+        </initial-values>
+      </item>
+      <item class="javax.swing.JTextField" icon="/com/intellij/uiDesigner/icons/textField.png" removable="false" auto-create-binding="true" can-attach-label="true">
+        <default-constraints vsize-policy="0" hsize-policy="6" anchor="8" fill="1">
+          <preferred-size width="150" height="-1" />
+        </default-constraints>
+      </item>
+      <item class="javax.swing.JPasswordField" icon="/com/intellij/uiDesigner/icons/passwordField.png" removable="false" auto-create-binding="true" can-attach-label="true">
+        <default-constraints vsize-policy="0" hsize-policy="6" anchor="8" fill="1">
+          <preferred-size width="150" height="-1" />
+        </default-constraints>
+      </item>
+      <item class="javax.swing.JFormattedTextField" icon="/com/intellij/uiDesigner/icons/formattedTextField.png" removable="false" auto-create-binding="true" can-attach-label="true">
+        <default-constraints vsize-policy="0" hsize-policy="6" anchor="8" fill="1">
+          <preferred-size width="150" height="-1" />
+        </default-constraints>
+      </item>
+      <item class="javax.swing.JTextArea" icon="/com/intellij/uiDesigner/icons/textArea.png" removable="false" auto-create-binding="true" can-attach-label="true">
+        <default-constraints vsize-policy="6" hsize-policy="6" anchor="0" fill="3">
+          <preferred-size width="150" height="50" />
+        </default-constraints>
+      </item>
+      <item class="javax.swing.JTextPane" icon="/com/intellij/uiDesigner/icons/textPane.png" removable="false" auto-create-binding="true" can-attach-label="true">
+        <default-constraints vsize-policy="6" hsize-policy="6" anchor="0" fill="3">
+          <preferred-size width="150" height="50" />
+        </default-constraints>
+      </item>
+      <item class="javax.swing.JEditorPane" icon="/com/intellij/uiDesigner/icons/editorPane.png" removable="false" auto-create-binding="true" can-attach-label="true">
+        <default-constraints vsize-policy="6" hsize-policy="6" anchor="0" fill="3">
+          <preferred-size width="150" height="50" />
+        </default-constraints>
+      </item>
+      <item class="javax.swing.JComboBox" icon="/com/intellij/uiDesigner/icons/comboBox.png" removable="false" auto-create-binding="true" can-attach-label="true">
+        <default-constraints vsize-policy="0" hsize-policy="2" anchor="8" fill="1" />
+      </item>
+      <item class="javax.swing.JTable" icon="/com/intellij/uiDesigner/icons/table.png" removable="false" auto-create-binding="true" can-attach-label="false">
+        <default-constraints vsize-policy="6" hsize-policy="6" anchor="0" fill="3">
+          <preferred-size width="150" height="50" />
+        </default-constraints>
+      </item>
+      <item class="javax.swing.JList" icon="/com/intellij/uiDesigner/icons/list.png" removable="false" auto-create-binding="true" can-attach-label="false">
+        <default-constraints vsize-policy="6" hsize-policy="2" anchor="0" fill="3">
+          <preferred-size width="150" height="50" />
+        </default-constraints>
+      </item>
+      <item class="javax.swing.JTree" icon="/com/intellij/uiDesigner/icons/tree.png" removable="false" auto-create-binding="true" can-attach-label="false">
+        <default-constraints vsize-policy="6" hsize-policy="6" anchor="0" fill="3">
+          <preferred-size width="150" height="50" />
+        </default-constraints>
+      </item>
+      <item class="javax.swing.JTabbedPane" icon="/com/intellij/uiDesigner/icons/tabbedPane.png" removable="false" auto-create-binding="true" can-attach-label="false">
+        <default-constraints vsize-policy="3" hsize-policy="3" anchor="0" fill="3">
+          <preferred-size width="200" height="200" />
+        </default-constraints>
+      </item>
+      <item class="javax.swing.JSplitPane" icon="/com/intellij/uiDesigner/icons/splitPane.png" removable="false" auto-create-binding="false" can-attach-label="false">
+        <default-constraints vsize-policy="3" hsize-policy="3" anchor="0" fill="3">
+          <preferred-size width="200" height="200" />
+        </default-constraints>
+      </item>
+      <item class="javax.swing.JSpinner" icon="/com/intellij/uiDesigner/icons/spinner.png" removable="false" auto-create-binding="true" can-attach-label="true">
+        <default-constraints vsize-policy="0" hsize-policy="6" anchor="8" fill="1" />
+      </item>
+      <item class="javax.swing.JSlider" icon="/com/intellij/uiDesigner/icons/slider.png" removable="false" auto-create-binding="true" can-attach-label="false">
+        <default-constraints vsize-policy="0" hsize-policy="6" anchor="8" fill="1" />
+      </item>
+      <item class="javax.swing.JSeparator" icon="/com/intellij/uiDesigner/icons/separator.png" removable="false" auto-create-binding="false" can-attach-label="false">
+        <default-constraints vsize-policy="6" hsize-policy="6" anchor="0" fill="3" />
+      </item>
+      <item class="javax.swing.JProgressBar" icon="/com/intellij/uiDesigner/icons/progressbar.png" removable="false" auto-create-binding="true" can-attach-label="false">
+        <default-constraints vsize-policy="0" hsize-policy="6" anchor="0" fill="1" />
+      </item>
+      <item class="javax.swing.JToolBar" icon="/com/intellij/uiDesigner/icons/toolbar.png" removable="false" auto-create-binding="false" can-attach-label="false">
+        <default-constraints vsize-policy="0" hsize-policy="6" anchor="0" fill="1">
+          <preferred-size width="-1" height="20" />
+        </default-constraints>
+      </item>
+      <item class="javax.swing.JToolBar$Separator" icon="/com/intellij/uiDesigner/icons/toolbarSeparator.png" removable="false" auto-create-binding="false" can-attach-label="false">
+        <default-constraints vsize-policy="0" hsize-policy="0" anchor="0" fill="1" />
+      </item>
+      <item class="javax.swing.JScrollBar" icon="/com/intellij/uiDesigner/icons/scrollbar.png" removable="false" auto-create-binding="true" can-attach-label="false">
+        <default-constraints vsize-policy="6" hsize-policy="0" anchor="0" fill="2" />
+      </item>
+    </group>
+  </component>
+  <component name="ProjectCodeStyleSettingsManager">
+    <option name="PER_PROJECT_SETTINGS">
+      <value>
+        <XML>
+          <option name="XML_LEGACY_SETTINGS_IMPORTED" value="true" />
+        </XML>
+      </value>
+    </option>
+    <option name="USE_PER_PROJECT_SETTINGS" value="true" />
+  </component>
+  <component name="ProjectModuleManager">
+    <modules>
+      <module fileurl="file://$PROJECT_DIR$/mmcs.iml" filepath="$PROJECT_DIR$/mmcs.iml" />
+    </modules>
+  </component>
+  <component name="ProjectResources">
+    <default-html-doctype>http://www.w3.org/1999/xhtml</default-html-doctype>
+  </component>
+  <component name="ProjectRootManager" version="2" languageLevel="JDK_1_7" assert-keyword="true" jdk-15="true" project-jdk-name="1.7" project-jdk-type="JavaSDK">
+    <output url="file://$PROJECT_DIR$/target" />
+  </component>
+  <component name="VcsDirectoryMappings">
+    <mapping directory="" vcs="" />
+  </component>
+  <component name="WebServicesPlugin" addRequiredLibraries="true" />
+  <component name="libraryTable">
+    <library name="hibernate">
+      <CLASSES>
+        <root url="jar://$PROJECT_DIR$/../sharelib/hibernate/v3/antlr-2.7.6.jar!/" />
+        <root url="jar://$PROJECT_DIR$/../sharelib/hibernate/v3/asm-2.2.3.jar!/" />
+        <root url="jar://$PROJECT_DIR$/../sharelib/hibernate/v3/cglib-nodep.jar!/" />
+        <root url="jar://$PROJECT_DIR$/../sharelib/hibernate/v3/collin.jar!/" />
+        <root url="jar://$PROJECT_DIR$/../sharelib/hibernate/v3/ehcache.jar!/" />
+        <root url="jar://$PROJECT_DIR$/../sharelib/hibernate/v3/hibernate3.jar!/" />
+        <root url="jar://$PROJECT_DIR$/../sharelib/hibernate/v3/jaas.jar!/" />
+        <root url="jar://$PROJECT_DIR$/../sharelib/hibernate/v3/jcommon.jar!/" />
+        <root url="jar://$PROJECT_DIR$/../sharelib/hibernate/v3/jdbc2_0-stdext.jar!/" />
+        <root url="jar://$PROJECT_DIR$/../sharelib/hibernate/v3/jfreechart.jar!/" />
+        <root url="jar://$PROJECT_DIR$/../sharelib/hibernate/v3/jstl.jar!/" />
+        <root url="jar://$PROJECT_DIR$/../sharelib/hibernate/v3/jta.jar!/" />
+        <root url="jar://$PROJECT_DIR$/../sharelib/hibernate/v3/ognl-2.6.11.jar!/" />
+        <root url="jar://$PROJECT_DIR$/../sharelib/sourceforge/cp3/c3p0-0.9.1.2.jar!/" />
+        <root url="jar://$PROJECT_DIR$/../sharelib/jdbc/jtds/jtds-1.2.jar!/" />
+        <root url="jar://$PROJECT_DIR$/../sharelib/jdbc/mysql/mysql-connector-java-5.0.8-bin.jar!/" />
+      </CLASSES>
+      <JAVADOC />
+      <SOURCES />
+    </library>
+    <library name="mmcs">
+      <CLASSES>
+        <root url="jar://$PROJECT_DIR$/../sharelib/jakarta/log4j/log4j-1.2.15.jar!/" />
+        <root url="jar://$PROJECT_DIR$/../sharelib/jakarta/commons-logging/commons-logging.jar!/" />
+        <root url="jar://$PROJECT_DIR$/../sharelib/jakarta/commons-fileupload/commons-fileupload.jar!/" />
+        <root url="jar://$PROJECT_DIR$/../sharelib/jakarta/commons-codec/commons-codec.jar!/" />
+        <root url="jar://$PROJECT_DIR$/../sharelib/jakarta/jaxen/jaxen.jar!/" />
+        <root url="jar://$PROJECT_DIR$/../sharelib/dom4j/dom4j.jar!/" />
+        <root url="jar://$PROJECT_DIR$/../sharelib/json/ezmorph.jar!/" />
+        <root url="jar://$PROJECT_DIR$/../sharelib/json/jsonplugin.jar!/" />
+        <root url="jar://$PROJECT_DIR$/../sharelib/json/json.jar!/" />
+        <root url="jar://$PROJECT_DIR$/../sharelib/json/json-taglib.jar!/" />
+        <root url="jar://$PROJECT_DIR$/../sharelib/jakarta/commons-collections/commons-collections.jar!/" />
+        <root url="jar://$PROJECT_DIR$/../sharelib/jakarta/commons-lang/commons-lang.jar!/" />
+        <root url="jar://$PROJECT_DIR$/../sharelib/jakarta/commons-digester/commons-digester.jar!/" />
+        <root url="jar://$PROJECT_DIR$/../sharelib/jakarta/commons-httpclient/commons-httpclient.jar!/" />
+      </CLASSES>
+      <JAVADOC />
+      <SOURCES />
+    </library>
+    <library name="servlet">
+      <CLASSES>
+        <root url="jar://$PROJECT_DIR$/../sharelib/sun/servlet/jsp-api.jar!/" />
+        <root url="jar://$PROJECT_DIR$/../sharelib/sun/servlet/servlet-api.jar!/" />
+      </CLASSES>
+      <JAVADOC />
+      <SOURCES />
+    </library>
+    <library name="shared">
+      <CLASSES />
+      <JAVADOC />
+      <SOURCES />
+    </library>
+    <library name="spring">
+      <CLASSES>
+        <root url="jar://$PROJECT_DIR$/../sharelib/spring/spring.jar!/" />
+        <root url="jar://$PROJECT_DIR$/../sharelib/spring/xwork.jar!/" />
+      </CLASSES>
+      <JAVADOC />
+      <SOURCES />
+    </library>
+    <library name="struts">
+      <CLASSES>
+        <root url="jar://$PROJECT_DIR$/../sharelib/jakarta/struts2/struts2-convention-plugin.jar!/" />
+        <root url="jar://$PROJECT_DIR$/../sharelib/jakarta/struts2/concurrent-1.3.4.jar!/" />
+        <root url="jar://$PROJECT_DIR$/../sharelib/jakarta/struts2/antlr.jar!/" />
+        <root url="jar://$PROJECT_DIR$/../sharelib/jakarta/struts2/struts2-spring-plugin.jar!/" />
+        <root url="jar://$PROJECT_DIR$/../sharelib/jakarta/struts2/struts2-core.jar!/" />
+        <root url="jar://$PROJECT_DIR$/../sharelib/jakarta/struts/standard.jar!/" />
+        <root url="jar://$PROJECT_DIR$/../sharelib/sourceforge/freemarker/freemarker.jar!/" />
+      </CLASSES>
+      <JAVADOC />
+      <SOURCES />
+    </library>
+  </component>
+</project>
+

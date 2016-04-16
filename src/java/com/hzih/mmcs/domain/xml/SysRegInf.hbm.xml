@@ -1,0 +1,37 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN" "http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
+
+<hibernate-mapping>
+  <class table="sysreginf" name="com.hzih.mmcs.domain.SysRegInf">
+    <id access="field" name="id" type="java.lang.Integer" column="id">
+      <generator class="identity"/>
+    </id>
+    <property name="systemname" column="systemname" access="field" type="java.lang.String"/>
+    <property name="idsystem" column="idsystem" access="field" type="java.lang.String"/>
+    <property name="systemclass" column="systemclass" access="field" type="java.lang.String"/>
+    <property name="address" column="address" access="field" type="java.lang.String"/>
+    <property name="manager" column="manager" access="field" type="java.lang.String"/>
+    <property name="managerPhone" column="managerPhone" access="field" type="java.lang.String"/>
+    <property name="managerMail" column="managerMail" access="field" type="java.lang.String"/>
+    <property name="managerOtherlink" column="managerOtherlink" access="field" type="java.lang.String"/>
+    <property name="remoteaccessIp" column="remoteaccessIp" access="field" type="java.lang.String"/>
+    <property name="constructUnit" column="constructUnit" access="field" type="java.lang.String"/>
+    <property name="buildingUnitCode" column="buildingUnitCode" access="field" type="java.lang.String"/>
+    <property name="signSecrecyprotocol" column="signSecrecyprotocol" access="field" type="java.lang.String"/>
+    <property name="approveUnit" column="approveUnit" access="field" type="java.lang.String"/>
+    <property name="approveNo" column="approveNo" access="field" type="java.lang.String"/>
+    <property name="approveMaterial" column="approveMaterial" access="field" type="java.lang.String"/>
+    <property name="securityProject" column="securityProject" access="field" type="java.lang.String"/>
+    <property name="secrecyProtocol" column="secrecyProtocol" access="field" type="java.lang.String"/>
+    <property name="maintainUnit" column="maintainUnit" access="field" type="java.lang.String"/>
+    <property name="maintainManager" column="maintainManager" access="field" type="java.lang.String"/>
+    <property name="maintainManagerPhone" column="maintainManagerPhone" access="field" type="java.lang.String"/>
+    <property name="maintainManagerMail" column="maintainManagerMail" access="field" type="java.lang.String"/>
+    <property name="maintainManagerLink" column="maintainManagerLink" access="field" type="java.lang.String"/>
+    <property name="systemMap" column="systemMap" access="field" type="java.lang.String"/>
+    <property name="ifpassed" column="ifpassed" access="field" type="java.lang.String"/>
+    <property name="buildingTime" column="buildingTime" access="field" type="java.sql.Timestamp"/>
+    <property name="approveTime" column="approveTime" access="field" type="java.sql.Timestamp"/>
+    <property name="collecttime" column="collecttime" access="field" type="java.sql.Timestamp"/>
+  </class>
+</hibernate-mapping>

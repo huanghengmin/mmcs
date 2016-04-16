@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN" "http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
+
+<hibernate-mapping>
+    <class table="bizoperatestylecode" name="com.hzih.mmcs.domain.BizOperateStyleCode">
+        <id access="field" name="bizOperatestylecode" type="java.lang.String" column="biz_operatestylecode">
+            <generator class="assigned"/>
+        </id>
+        <property name="operationname" column="operationname" access="field" type="java.lang.String"/>
+    </class>
+</hibernate-mapping>

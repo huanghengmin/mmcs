@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN" "http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
+
+<hibernate-mapping>
+  <class table="sysoutlinkinf" name="com.hzih.mmcs.domain.SysOutLinkInf">
+    <id access="field" name="id" type="java.lang.Integer" column="id">
+      <generator class="identity"/>
+    </id>
+    <property name="idsystem" column="idsystem" access="field" type="java.lang.String"/>
+    <property name="idoutconnlink" column="idoutconnlink" access="field" type="java.lang.Integer"/>
+    <property name="outlinkbandwidth" column="outlinkbandwidth" access="field" type="java.lang.Integer"/>
+    <property name="outlinkvender" column="outlinkvender" access="field" type="java.lang.String"/>
+    <property name="outlinkdisc" column="outlinkdisc" access="field" type="java.lang.String"/>
+    <property name="collecttime" column="collecttime" access="field" type="java.sql.Timestamp"/>
+  </class>
+</hibernate-mapping>

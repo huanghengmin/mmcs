@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN" "http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
+
+<hibernate-mapping>
+    <class table="bizmodecode" name="com.hzih.mmcs.domain.BizModeCode">
+        <id access="field" name="bizmodecode" type="java.lang.String" column="bizmodecode">
+            <generator class="assigned"/>
+        </id>
+        <property name="bizmodename" column="bizmodename" access="field" type="java.lang.String"/>
+    </class>
+</hibernate-mapping>

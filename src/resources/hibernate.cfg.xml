@@ -1,0 +1,62 @@
+<?xml version='1.0' encoding='UTF-8'?>
+<!DOCTYPE hibernate-configuration PUBLIC
+          "-//Hibernate/Hibernate Configuration DTD 3.0//EN"
+          "http://hibernate.sourceforge.net/hibernate-configuration-3.0.dtd">
+
+<hibernate-configuration>
+    <session-factory>
+        <property name="c3p0.min_size">5</property>
+        <property name="c3p0.max_size">100</property>
+        <property name="c3p0.timeout">1800</property>
+        <property name="c3p0.max_statements">100</property>
+        <!--<property name="c3p0.poolPreparedStatements">true</property>-->
+
+        <mapping resource="com/hzih/mmcs/domain/xml/Account.hbm.xml" />
+        <mapping resource="com/hzih/mmcs/domain/xml/BusinessLog.hbm.xml" />
+        <mapping resource="com/hzih/mmcs/domain/xml/Department.hbm.xml" />
+        <mapping resource="com/hzih/mmcs/domain/xml/District.hbm.xml" />
+        <mapping resource="com/hzih/mmcs/domain/xml/EquipmentLog.hbm.xml" />
+        <mapping resource="com/hzih/mmcs/domain/xml/LogRecord.hbm.xml" />
+        <mapping resource="com/hzih/mmcs/domain/xml/InitSystem.hbm.xml" />
+        <mapping resource="com/hzih/mmcs/domain/xml/Orgcode.hbm.xml" />
+        <mapping resource="com/hzih/mmcs/domain/xml/Permission.hbm.xml" />
+        <mapping resource="com/hzih/mmcs/domain/xml/Role.hbm.xml" />
+        <mapping resource="com/hzih/mmcs/domain/xml/SafePolicy.hbm.xml" />
+        <mapping resource="com/hzih/mmcs/domain/xml/SysLog.hbm.xml" />
+        <mapping resource="com/hzih/mmcs/domain/xml/UserOperLog.hbm.xml" />
+
+        <!-- cx -->
+        <mapping resource="com/hzih/mmcs/domain/xml/News.hbm.xml" />
+        <mapping resource="com/hzih/mmcs/domain/xml/Sysmessage.hbm.xml" />
+        <mapping resource="com/hzih/mmcs/domain/xml/Sysabnormal.hbm.xml" />
+        <mapping resource="com/hzih/mmcs/domain/xml/Abnormaltypecode.hbm.xml" />
+        <mapping resource="com/hzih/mmcs/domain/xml/Abnormalobjectcode.hbm.xml" />
+        <mapping resource="com/hzih/mmcs/domain/xml/Treadresultcode.hbm.xml" />
+        <mapping resource="com/hzih/mmcs/domain/xml/Zonecode.hbm.xml" />
+        <mapping resource="com/hzih/mmcs/domain/xml/AccountRole.hbm.xml" />
+
+        <mapping resource="com/hzih/mmcs/domain/xml/SysRegInf.hbm.xml" />
+
+        <!-- GDW -->
+        <mapping resource="com/hzih/mmcs/domain/xml/StatSysstatus.hbm.xml" />
+        <mapping resource="com/hzih/mmcs/domain/xml/SysBizInf.hbm.xml" />
+        <mapping resource="com/hzih/mmcs/domain/xml/SysDeviceInf.hbm.xml" />
+        <mapping resource="com/hzih/mmcs/domain/xml/SysOutLinkInf.hbm.xml" />
+        <mapping resource="com/hzih/mmcs/domain/xml/OutLinkTypeCode.hbm.xml" />
+        <mapping resource="com/hzih/mmcs/domain/xml/BizModeCode.hbm.xml" />
+        <mapping resource="com/hzih/mmcs/domain/xml/BizOperateStyleCode.hbm.xml" />
+        <mapping resource="com/hzih/mmcs/domain/xml/BizTypeCode.hbm.xml" />
+        <mapping resource="com/hzih/mmcs/domain/xml/BizFuncTypeCode.hbm.xml" />
+        <mapping resource="com/hzih/mmcs/domain/xml/TerminalTypeCode.hbm.xml" />
+        <mapping resource="com/hzih/mmcs/domain/xml/DeviceTypeCode.hbm.xml" />
+        <mapping resource="com/hzih/mmcs/domain/xml/BuildingUnitCode.hbm.xml" />
+
+        <!-- hhm -->
+        <mapping resource="com/hzih/mmcs/domain/xml/SysAssessment.hbm.xml"/>
+
+        <!--lmy-->
+        <mapping resource="com/hzih/mmcs/domain/xml/Systerminalinfo.hbm.xml" />
+        <mapping resource="com/hzih/mmcs/domain/xml/StatSysterminalinfo.hbm.xml" />
+
+    </session-factory>
+</hibernate-configuration>

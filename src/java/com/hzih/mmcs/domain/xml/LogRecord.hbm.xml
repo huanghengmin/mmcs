@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN" "http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
+
+<hibernate-mapping>
+  <class table="logrecord" name="com.hzih.mmcs.domain.LogRecord">
+    <id access="field" name="id" type="long" column="id" length="11">
+      <generator class="increment"/>
+    </id>
+    <property name="userName" length="20" column="userName" access="field" type="string"/>
+    <property name="idSystem" length="8" column="idsystem" access="field" type="string"/>
+    <property name="info" length="50" column="info" access="field" type="string"/>
+    <property name="logTime" column="logtime" access="field" type="java.util.Date"/>
+    <property name="count" length="5" column="count" access="field" type="int"/>
+  </class>
+</hibernate-mapping>

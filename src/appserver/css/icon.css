@@ -1,0 +1,45 @@
+.ext-strict .ext-ie6 .x-layout-split {
+	BACKGROUND-COLOR: #dfe8f6
+}
+.add {
+	BACKGROUND-IMAGE: url(../img/icon/add.gif)! important
+}
+.remove {
+	BACKGROUND-IMAGE: url(../img/icon/delete.gif)! important
+}
+.removeall {
+	BACKGROUND-IMAGE: url(../img/icon/removeall.png)! important
+}
+.upgrade {
+	BACKGROUND-IMAGE: url(../img/icon/upgrade.png)! important
+}
+.exportfile {
+	BACKGROUND-IMAGE: url(../img/icon/exportfile.png)! important
+}
+.export {
+	BACKGROUND-IMAGE: url(../img/icon/export.png)! important
+}
+.copy {
+    BACKGROUND-IMAGE: url(../img/icon/copy.gif)! important
+}
+.save {
+    BACKGROUND-IMAGE: url(../img/icon/save.gif)! important
+}
+.help {
+	BACKGROUND-IMAGE: url(../img/icon/help.png)! important
+}
+.refresh {
+	BACKGROUND-IMAGE: url(../ext/resources/images/default/grid/refresh.gif)! important
+}
+.logout {
+    BACKGROUND-IMAGE: url(../img/door_out.png)! important
+}
+.home {
+    BACKGROUND-IMAGE: url(../img/house.png)! important
+}
+.favorite {
+    BACKGROUND-IMAGE: url(../img/page_white_office.png)! important
+}
+.query {
+    BACKGROUND-IMAGE: url(../img/icon/query.png)! important
+}

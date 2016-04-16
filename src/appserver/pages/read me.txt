@@ -1,0 +1,8 @@
+analysis 统计分析
+assessment 考核评比
+email 收件箱
+monitor 运行监控,终端监控
+system 系统管理
+notice 信息发布
+abnormal 违规通报
+audit 信息审计

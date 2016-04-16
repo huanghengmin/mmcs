@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN" "http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
+
+<hibernate-mapping>
+    <class table="sysmessage" name="com.hzih.mmcs.domain.Sysmessage">
+        <id name="id" type="java.lang.Integer" >
+            <column name="id" />
+            <generator class="native" />
+        </id>
+        <property name="msgName" column="msg_name" access="field" type="java.lang.String"/>
+        <property name="msgType" column="msg_type" access="field" type="java.lang.String"/>
+        <property name="idalertmatter" column="idalertmatter" access="field" type="java.lang.Long"/>
+        <property name="msgAdminId" column="msg_admin_id" access="field" type="java.lang.Long"/>
+        <property name="idsystem" column="idsystem" access="field" type="java.lang.String"/>
+        <property name="ifchecked" column="ifchecked" access="field" type="java.lang.String"/>
+        <property name="sendTime" column="send_time" access="field" type="java.util.Date"/>
+        <property name="checkedTime" column="checked_time" access="field" type="java.util.Date"/>
+
+    </class>
+</hibernate-mapping>
